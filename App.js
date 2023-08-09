@@ -8,7 +8,9 @@ const cors = require("cors");
 dotenv.config();
 app.use(bodyParser.json());
 app.use(cors());
-
+/////////access files from public folder
+app.use(express.static(__dirname + "/public"));
+/////
 const server = http.createServer(app);
 mongoose.set("strictQuery", false);
 mongoose.connect(process.env.DATABASE_URL, () => {

@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema(
     phone: {
       type: String,
     },
+    // terms_condition: {
+    //   type: Boolean,
+    //   required: [true, "required terms and condition"],
+    // },
   },
   { timestamps: true }
 );
