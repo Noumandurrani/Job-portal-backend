@@ -45,6 +45,15 @@ const getJobByCateg = async (req, res) => {
   const getJob = await PostJob.find({ jobCategory: req.body.jobCategory });
   res.json({
     message: "fetch jobs by category",
+    data: getJob,
+  });
+};
+
+const getJobByType = async (req, res) => {
+  const getJob = await PostJob.find({ jobType: req.body.jobType });
+  res.json({
+    message: "fetch jobs by type",
+    data: getJob,
   });
 };
 module.exports = {
@@ -52,4 +61,5 @@ module.exports = {
   postsGet,
   postsGetById,
   getJobByCateg,
+  getJobByType,
 };

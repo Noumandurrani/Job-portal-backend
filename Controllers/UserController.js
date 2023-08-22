@@ -66,8 +66,19 @@ const getUserById = async (req, res) => {
     data: user,
   });
 };
+
+// getCandidate
+const getByRole = async (req, res) => {
+  const user = await User.find({ role: req.body.role });
+  res.json({
+    message: "fetch user",
+    data: user,
+  });
+};
+
 module.exports = {
   addUser,
   getUsers,
   getUserById,
+  getByRole,
 };
